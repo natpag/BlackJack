@@ -16,7 +16,7 @@ namespace BlackJack
     //method
     public string DisplayCard()
     {
-      return $"{Rank} of {Suit}";
+      return $"{Rank}{Suit}";
     }
 
     public int GetCardValue()

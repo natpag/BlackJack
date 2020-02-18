@@ -15,7 +15,9 @@ namespace BlackJack
       {
         Console.Clear();
 
-        Console.WriteLine("Welcome to BlackJack! Let's deal...");
+        Console.WriteLine("╔════════════════════════════════════════════╗");
+        Console.WriteLine("    Welcome to BlackJack! Let's deal...");
+        Console.WriteLine("╚════════════════════════════════════════════╝");
 
         //INSERT GAME HERE
         var deck = GetShuffledDeck();
@@ -37,6 +39,8 @@ namespace BlackJack
         deck.RemoveAt(0);
         deck.RemoveAt(0);
 
+        Console.WriteLine($"\nThe Dealer has been dealt the {dealerHand[0].DisplayCard()} and a facedown card...");
+
         var playerTotal = GetHandTotal(playerHand);
         var dealerTotal = GetHandTotal(dealerHand);
 
@@ -47,7 +51,10 @@ namespace BlackJack
           bool playerStand = false;
           while (!playerStand)
           {
-            Console.WriteLine("\nWould you like to hit or stand?");
+            Console.WriteLine("\n|* * * * * * * * * * * * * * * * * * * * * * * * *|");
+            Console.WriteLine("    Would you like to hit or stand?    ");
+            Console.WriteLine("|* * * * * * * * * * * * * * * * * * * * * * * * *|");
+
 
             userInput = Console.ReadLine().ToLower();
 
@@ -123,7 +130,7 @@ namespace BlackJack
         }
         else
         {
-          Console.WriteLine("You Tied!");
+          Console.WriteLine("Push! You Tied!");
         }
 
 
@@ -140,8 +147,10 @@ namespace BlackJack
 
     private List<Card> GetShuffledDeck()
     {
+      //found instrustions for UniCode here (https://www.youtube.com/watch?v=eGKQhr1HxzU)
+      Console.OutputEncoding = System.Text.Encoding.UTF8;
       var deck = new List<Card>();
-      var suits = new string[] { "Clubs", "Diamonds", "Hearts", "Spades" };
+      var suits = new string[] { "\u2663", "\u2666", "\u2665", "\u2660" };
       var ranks = new string[] { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
 
       for (var i = 0; i < suits.Length; i++)
