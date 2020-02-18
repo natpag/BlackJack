@@ -10,7 +10,6 @@ namespace BlackJack
       var game = new BlackJackGame();
 
       game.StartGame();
-
     }
   }
 }
