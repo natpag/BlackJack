@@ -72,7 +72,7 @@ namespace BlackJack
 
               if (playerTotal >= 21)
               {
-                break; // breaks you out of the loop!
+                break; // breaks you out of the loop! (found how to break in a loop here: https://www.tutorialspoint.com/csharp/csharp_break_statement.htm)
               }
             }
             else if (userInput == "stand")
